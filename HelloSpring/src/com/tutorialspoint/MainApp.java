@@ -1,17 +1,15 @@
 package com.tutorialspoint;
 
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.*;
 
 public class MainApp {
 	public static void main(String[] args) {
-		ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+		ApplicationContext ctx = new AnnotationConfigApplicationContext(HelloWorldConfig.class);
 
-		JavaCollection jc = (JavaCollection) context.getBean("javaCollection");
+		HelloWorld helloWorld = ctx.getBean(HelloWorld.class);
 
-		jc.getAddressList();
-		jc.getAddressSet();
-		jc.getAddressMap();
-		jc.getAddressProp();
+		helloWorld.setMessage("Hello World!");
+		helloWorld.getMessage();
 	}
 }
