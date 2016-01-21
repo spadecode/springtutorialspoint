@@ -5,11 +5,10 @@ import org.springframework.context.annotation.*;
 
 public class MainApp {
 	public static void main(String[] args) {
-		ApplicationContext ctx = new AnnotationConfigApplicationContext(HelloWorldConfig.class);
+		ApplicationContext ctx = new AnnotationConfigApplicationContext(TextEditorConfig.class);
 
-		HelloWorld helloWorld = ctx.getBean(HelloWorld.class);
+		TextEditor te = ctx.getBean(TextEditor.class);
 
-		helloWorld.setMessage("Hello World!");
-		helloWorld.getMessage();
+		te.spellCheck();
 	}
 }
