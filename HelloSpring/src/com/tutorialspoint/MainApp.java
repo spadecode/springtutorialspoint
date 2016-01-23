@@ -1,7 +1,6 @@
 package com.tutorialspoint;
 
 import java.util.List;
-
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.tutorialspoint.StudentJDBCTemplate;
@@ -24,9 +23,6 @@ public class MainApp {
 			System.out.print(", Name : " + record.getName());
 			System.out.println(", Age : " + record.getAge());
 		}
-
-		System.out.println("----Updating Record with ID = 2 -----");
-		studentJDBCTemplate.update(2, 20);
 
 		System.out.println("----Listing Record with ID = 2 -----");
 		Student student = studentJDBCTemplate.getStudent(2);
